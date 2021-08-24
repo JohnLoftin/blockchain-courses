@@ -3,6 +3,8 @@ MetaMask Test Eth Networks:
     Ropsten - ERROR 500 (check later or use Glitter)
     Goerli - ERROR 500 (check later - when twitter acct is a week old)
 
+View changes and transactions on the blockchain at etherscan.io
+
 MetaMask <--> Infura (Block Explorer - uses RESTful API connects to chain node) <--> Blockchain Node <--> Blockchain Network
 
 MetaMask Behind the Scenes Takeaways:
@@ -38,5 +40,22 @@ Signatures:
         - Public Key is passed to Eth account
         - Private Key is used to sign transaction
         - Signature (private key) can then be verified by comparing public key and eth account (both generated off of private key) using an ECRECOVER function
+
+Cryptographic Hashing:
+    HashFunction - takes an input and outputs a digest
+        i.e. HashFunction("some string") => "hash string of random characters"
+    Ideal Cryptographic Hash has 5 main properties:
+        - It is deterministic (same message always resluts in the same hash)
+        - It is quick to compute the hash value for any given message
+        - It is infeasible to generate a message from its hash value except by trying all possible messages
+        - A small change to input should change the hash value so extensively that the new hash value appears uncorrelated with the old hash value
+        - It is impossible to find two different messages with the same hash value
+    Blockchain Hashing + Decentralization:
+        - To access and change one hash, you would have to access every node on the blockchain and change it there as well
+
+    Takeaways:
+        - Hashing is the mathematical foundation of Blockchains
+        - Blocks always have hashes of previous blocks - are chained together
+        - Changing information in a previous block changes all blocks thereafter
 
 
