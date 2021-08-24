@@ -2,3 +2,41 @@ MetaMask Test Eth Networks:
     Rinkeby - 3 TestEth from https://www.rinkeby.io/#faucet
     Ropsten - ERROR 500 (check later or use Glitter)
     Goerli - ERROR 500 (check later - when twitter acct is a week old)
+
+MetaMask <--> Infura (Block Explorer - uses RESTful API connects to chain node) <--> Blockchain Node <--> Blockchain Network
+
+MetaMask Behind the Scenes Takeaways:
+    - You need a blockchain node to interact with the blockchain 
+    - Blockchain is "the single source of truth" - shared ledger allowing us all access to the data
+
+Gas is a transactional fee taken on Eth transfers
+
+Transactional Objects:
+    from: [account]
+    to: [account](optional)
+    value: [integer] in wei
+    /-- additional objects --\
+    gas: maximum amount of gas used
+    gasPrice: amount of wei per gas
+    data: ABI byte string (optional)
+    nonce: Integer of a nonce (integer that is incremented every time a transaction is sent - security measure to avoid replay attacks)
+
+Signatures:
+    - used to verify authenticity of a transaction and prevent malicious transfer activities
+    - https://web3js.readthedocs.io/en/v1.2.11/web3-eth-accounts.html#signtransaction
+    - web3.eth.accounts.signTransaction(tx, privateKey [, callback]);
+
+    Signature Process Breakdown:
+
+        Transaction {
+            from: [sending account address]
+            to: [receiving account address]
+            value: [amount to send]
+        }
+        - MetaMask signs transaction with Private Key - 32-bytes (64 hex characters)
+        - Private Key is send through ECDSA (Elliptic Curve Digital Signature Algorithm) to generate a Public Key
+        - Public Key is passed to Eth account
+        - Private Key is used to sign transaction
+        - Signature (private key) can then be verified by comparing public key and eth account (both generated off of private key) using an ECRECOVER function
+
+
