@@ -1,0 +1,4 @@
+MetaMask Test Eth Networks:
+    Rinkeby - 3 TestEth from https://www.rinkeby.io/#faucet
+    Ropsten - ERROR 500 (check later or use Glitter)
+    Goerli - ERROR 500 (check later - when twitter acct is a week old)
