@@ -3,7 +3,6 @@ pragma solidity ^0.8.0;
 
 contract SendMoneyExample {
     uint256 public balanceRecieved;
-    address public owner;
 
     function receiveMoney() public payable {
         balanceRecieved += msg.value;
