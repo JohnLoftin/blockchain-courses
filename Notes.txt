@@ -76,5 +76,28 @@ Structures of Solidity Contracts:
     - Special structures like "modifiers"
     - Imports
 
+Solidity Syntax/Layout:
+    - Pragma is a pre-compiler statement which locks in the Solidity compiler version
+    - Contract naming convention is CapWords style
+
+Solidity Takeaways:
+    - Smart Contracts running on blockchain
+    - Deployed as EVM Bytecode
+    - Turing complete
+
+Ganache:
+    - Choose quickstrart (Ethereum)
+    - Connect via remix by selecting Web3 Provider and inputing localhost ip + port (listed in Ganache UI top-middle)
+
+Blockchain Network:
+    - Main Network - Eth costs money, minimal changes to underlying protocol of network, persistent 
+    - Testing Networks - forked from main, persistent but can be deleted, real blockchain, beta release:
+        - Ropsten
+        - Rinkeby
+        - Görli
+    - Developer Networks - simulated blockchain, unit testing, fast transactions (no mining), non-persistent:
+        - Ganache
+        - JavaScript VM
+
 
 
