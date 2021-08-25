@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.4;
 
 contract WorkingWithVariables {
@@ -16,11 +17,15 @@ contract WorkingWithVariables {
     uint8 public myUint8;
 
     function incrementUint() public {
-        myUint8++;
+        unchecked {
+            myUint8++;
+        }
     }
 
     function decrementUint() public {
-        myUint8--;
+        unchecked {
+            myUint8--;
+        }
     }
 
     address public myAddress;
