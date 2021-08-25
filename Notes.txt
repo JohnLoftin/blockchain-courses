@@ -58,4 +58,23 @@ Cryptographic Hashing:
         - Blocks always have hashes of previous blocks - are chained together
         - Changing information in a previous block changes all blocks thereafter
 
+Smart Contracts:
+    A piece of code running on a blockchain
+        - "A state machine"
+        - Needs transactions to change state
+        - Can do logic operations
+    State change happens through mining + transactions
+    Is Turing complete - which means in theory it can solve any computation problem
+
+Structures of Solidity Contracts:
+    - Class like structures
+    - Contains functions
+    - Control structures (if/else)
+    - Loops
+    - DataTypes (int, boolean, arrays, Struct, Mapping, Address, NO FLOATS - cannot convert data dynamically like JS)
+    - Inheritable
+    - Special structures like "modifiers"
+    - Imports
+
+
 
