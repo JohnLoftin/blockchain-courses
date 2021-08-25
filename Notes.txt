@@ -99,5 +99,41 @@ Blockchain Network:
         - Ganache
         - JavaScript VM
 
+Simple Variables:
+    Types: 
+        - Boolean
+            - Keyword: bool
+            - Can negate ("myBool != myBool")
+            - And/Or operators: &&, ||
+        - Int/unit
+            - (Unsigned) Integer
+            - uint8 = 0 - 255
+            - int8 = -128 - +127
+            - 2^8 => 2**8
+            - uint256 => 2^256
+            - uint defaults to uint256
+        - Address
+            - Every interaction on Ethereum is address based
+            - Holds a 20 byte value (Ethereum Address)
+            - Used to transfer ether from smart contracts to the address or from an address to a smart contract
+            - Address and Address payable
+            - Has a balance field (.balance) which holds address balance in Wei
+        - Dynamically sized byte arrays (String)
+            - Strings and bytes
+            - Both are special arrays
+            - String is equal to byte, but does not have a length or index-access
+            - Byte does have length/index access
+            - Bytes for arbitrary length raw data
+            - String for arbitrary length string (UTF-8) data
+            - Strings are expensive to save and work with in Solidity - use bytes wherever possible
+        - No support for fixed point numbers (at time of lesson recording - upcoming feature might be out by now)
+    All variables are intialized by default
+        - There is no 'null' or 'undefined'
+        - (U)int = 0
+        - Bool = false
+        - String = ''
+    Public variables generate a get with the name of the variable 
+        - You cannot create a funtion with the same name of a variable
+    Reference types need a memory location (memory/storage)
 
 
