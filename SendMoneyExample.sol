@@ -14,7 +14,8 @@ contract SendMoneyExample {
     }
 
     function withdrawMoney() public {
-        payable(owner).transfer(this.getBalance());
+        address payable to = payable(msg.sender);
+        to.transfer(getBalance());
     }
 
     function withdrawMoneyTo(address payable _to) public {
