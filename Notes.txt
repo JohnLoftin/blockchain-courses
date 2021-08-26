@@ -136,4 +136,27 @@ Simple Variables:
         - You cannot create a funtion with the same name of a variable
     Reference types need a memory location (memory/storage)
 
+Addresses (Extended):
+    - Remember: All information on the blockchain is public
+        - It's a global database
+    - Address has two important members:
+        - .balance
+            - balance of account in wei
+        - .transfer(amount)
+            - transfers from the Smart Contract to the address an amount in wei
+        - .send()
+            - returns a Boolean, does not cascade exceptions
+
+Global Objects:
+    - Help understand where transactions come from and what happens inside
+    - Three very important global properties:
+        - msg.sender: The address of the account intialized in the transaction
+        - msg.value: Amount of Ether sent along 
+        - now: current timestamp (can be influenced by miners, don't use for odd/even numbers)
+
+Payable Functions:
+    - A function cannot recieve Ether unless it is marked "payable"
+        - address payable myAddress
+        - function myFunction() public payable {...}
+
 
