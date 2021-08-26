@@ -159,4 +159,9 @@ Payable Functions:
         - address payable myAddress
         - function myFunction() public payable {...}
 
+Start, Stopping, and Deleting Explained:
+    - Smart Contracts get compiled and sent to the blockchain as a transaction
+    - Transactions, once mined, are immutable (data cannot be deleted, only the state can be altered)
+    - Once a Smart Contract is destroyed, you can't interact with it anymore 
+
 
