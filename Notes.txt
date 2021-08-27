@@ -126,6 +126,29 @@ Simple Variables:
             - Bytes for arbitrary length raw data
             - String for arbitrary length string (UTF-8) data
             - Strings are expensive to save and work with in Solidity - use bytes wherever possible
+        - Enum
+            - Another way to define your own variables/types
+            - Will be integers internally
+        - Array
+            - Better to use mappings for gas consumption
+            - Fixed or dynamic size
+        - Struct
+            - Create your own variable/type
+                EX:
+                    struct Funder {
+                        address addr;
+                        uint amount;
+                    }
+                    Funder _funder;
+                    _funder.addr = 0x345
+                    _funder.amount = 0
+            - Non-recursive (no Structs in Structs)
+            - Better for gas consumption to use Struct instead of objects
+        - Mapping
+            - Like hash maps 
+            - Initialized by default
+            - Doesn't have length
+            - Public state mappings automatically creat getter function
         - No support for fixed point numbers (at time of lesson recording - upcoming feature might be out by now)
     All variables are intialized by default
         - There is no 'null' or 'undefined'
