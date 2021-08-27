@@ -187,4 +187,10 @@ Start, Stopping, and Deleting Explained:
     - Transactions, once mined, are immutable (data cannot be deleted, only the state can be altered)
     - Once a Smart Contract is destroyed, you can't interact with it anymore 
 
+View and Pure: 
+    - View
+        - Accessing state variables (reading functions)
+    - Pure  
+        - No accessing state variables
+
 
