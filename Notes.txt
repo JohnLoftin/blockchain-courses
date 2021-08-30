@@ -187,10 +187,74 @@ Start, Stopping, and Deleting Explained:
     - Transactions, once mined, are immutable (data cannot be deleted, only the state can be altered)
     - Once a Smart Contract is destroyed, you can't interact with it anymore 
 
-View and Pure: 
-    - View
-        - Accessing state variables (reading functions)
-    - Pure  
-        - No accessing state variables
+Transactions and Errors:
+    - Transactions are atomic 
+    - Errors are "state reverting"
+    - Require, assert, revert 
+        - Previously "throw" 
+    - They cascade, except for low level functions 
+    - Revert and require can return an error string 
+    - Assert vs. Require:
+        - Require:
+            - Revert operation (0xfd) for require
+                - Returns remaining gas
+            - Used to validate user input
+            - Triggered when:
+                - Require(x) where x evaluates to false
+                - function call via message call but it doesn't finish properly (except low-level function calls)
+                - External function call to a contract not containing any code
+                - Your contract receives either without the payable modifier 
+                - Your contract receives ether at a getter function 
+                - Address.transfer() fails
+        - Assert:
+            - Invalid operation (0xfe) for assert
+                - Consumes all gas
+            - Used to validate invariants 
+            Triggered when:
+                - Out of bounds index
+                - Division by zero or module zero (5/0 or 23%0)
+                - Byteshifting by a negative amount
+                - Convert a value too big or negative to Enum
+                - Zero-initialized variable of internal function type
+                - Or assert(x) where x evaluates to false
+
+Functions:
+    - Setter and Getter Functions
+        - Writing Transactions: Transactions
+        - Reading Transactions: Call 
+        - Calls are agains a local blockchain node 
+            - Remember: everyone has a copy of the blockchain 
+            - If you don't need to change anything, you don't need to inform other participants 
+            - Reading is virtually free 
+    - View and Pure: 
+        - View
+            - Accessing state variables (reading functions)
+            - Reading from the state and from other View Functions
+        - Pure  
+            - No accessing state variables
+            - Not reading or modifying the state 
+    - Function Visibility:
+        - Public 
+            - Can be called internally and externally 
+        - Private 
+            - Only for the contract, not externally reachable and not via derived contracts 
+        - External 
+            - Can be called from other contracts 
+            - Can be called externally 
+        - Internal 
+            - Only from the contract itself or from derived contracts. Can't be invoked by transaction 
+
+    - Fallback Functions:
+        - Constructor is called only once
+        - Fallback function is here to receive Ether as a simple transaction - beware of Gas limit 
+        - Getter cunctions are usually view functions
+        - View/Pure is only against your local blockchain node - doesn't need mining 
+
+
+
+
+
+
+
 
 
