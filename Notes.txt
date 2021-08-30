@@ -262,6 +262,16 @@ Functions:
         - Import specific members of a file:
             - import {symbol1 as alias, symbol2} from "filename";
 
+- Events and Return Variables:
+    - Events are used for return values, data store or trigger  
+    - Events can not be retrieved from within Smart Contracts
+    - Event arguments marked as indexed can be searched for 
+    - Events are cheap 
+
+
+
+
+
 
 
 
