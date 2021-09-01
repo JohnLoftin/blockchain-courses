@@ -262,11 +262,34 @@ Functions:
         - Import specific members of a file:
             - import {symbol1 as alias, symbol2} from "filename";
 
-- Events and Return Variables:
+Events and Return Variables:
     - Events are used for return values, data store or trigger  
     - Events can not be retrieved from within Smart Contracts
     - Event arguments marked as indexed can be searched for 
     - Events are cheap 
+
+ABI - Application Binary Interface 
+    - JSON file
+    - Contains all the information to interact with contract
+    - The Smart Contract on the blockchain is just a binary 
+        - Client-software doesn't know the interfaces
+        - Needs to be told via an external configuration -> ABI 
+
+Debugging 
+    - Step by Step
+    - Transaction based, currently no breakpoints 
+        - Step into after it happens, not while it happens 
+    - Shows Gas costs for Opcodes, stack and memory 
+        - Decent amount of details 
+    - Relatively good for prototyping 
+
+Gas and Operational Costs 
+    - Idea: Detatch execution cost from Ether 
+        - Like a car: Usage "petrol" per 100km. Petrol cost goes up and down. Consumption stays the same.
+        - Like Electricity: kWh usage stays the same, price varies 
+        - Like water: Liters of water used 
+    - Gas price varies. Gas consumption constant.
+        - Therefore, Ether cost varies 
 
 
 
